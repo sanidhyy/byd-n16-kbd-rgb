@@ -186,8 +186,6 @@ listener {
 swayidle -w timeout 300 'byd-n16-rgb --suspend' resume 'byd-n16-rgb --resume'
 ```
 
-Optional feedback: `byd-n16-rgb -c && notify-send "Keyboard RGB" "Effect cycled"`
-
 ## :wrench: Troubleshooting
 
 | Symptom                         | Fix                                             |
@@ -207,7 +205,7 @@ The keyboard exposes a composite USB HID device. **Interface 0** is normal typin
 
 Brightness is `percent × 2.55`, capped at 254. Checksum is `sum(bytes[1:63]) & 0xFF`.
 
-Byte 1 is the effect command — see [Effects and zones](#rainbow-effects-and-zones) for the full byte tables. Global mode (`-s 0`) sends one packet for the whole keyboard; per-zone mode (`-s 1`–`4`) sends one packet per section, leaving other zones unchanged.
+Byte 1 is the effect command — see [Effects and zones](#rainbow-effects-and-zones "🌈 Effects and zones") for the full byte tables. Global mode (`-s 0`) sends one packet for the whole keyboard; per-zone mode (`-s 1`–`4`) sends one packet per section, leaving other zones unchanged.
 
 ### :bulb: Quick example
 
@@ -255,4 +253,4 @@ byd-n16-rgb always_on 255 0 0 100
 
 ## :page_with_curl: License
 
-See [LICENSE](LICENSE).
+[MIT LICENSE](LICENSE "View MIT License").
