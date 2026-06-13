@@ -1,4 +1,4 @@
-# ⌨️ byd-n16-rgb
+# :keyboard: BYD N16 (Infinix) Linux RGB Driver
 
 Unofficial Linux CLI for the **BYD N16** internal keyboard RGB controller (`USB 340e:8002`).
 
@@ -6,23 +6,23 @@ Controls colors, brightness, and lighting effects on laptops that use this modul
 
 ---
 
-## ✨ What it does
+## :sparkles: What it does
 
 `byd-n16-rgb` sends lighting commands directly to the keyboard's RGB HID interface. Fn+F3 still handles basic firmware backlight separately — this tool is for full RGB control.
 
-- 🌐 Set **global effects** across the whole keyboard (off, always on, breath, clock, rainbow, flow, wave)
-- 🧩 Control **4 independent zones** — left, center, and right thirds of the main keyboard, plus the numpad
-- 🎨 Adjust **RGB and brightness** per effect
-- 🔁 **Toggle** RGB off/on while remembering the last state (`-t`)
-- 🔃 **Cycle** through effects with per-effect saved settings (`-c`)
-- 💤 **Suspend / resume** around sleep or lock (`--suspend` / `--resume`)
-- 📋 Run an **interactive menu** when called with no arguments
+- :globe_with_meridians: Set **global effects** across the whole keyboard (off, always on, breath, clock, rainbow, flow, wave)
+- :jigsaw: Control **4 independent zones** — left, center, and right thirds of the main keyboard, plus the numpad
+- :art: Adjust **RGB and brightness** per effect
+- :repeat: **Toggle** RGB off/on while remembering the last state (`-t`)
+- :arrows_clockwise: **Cycle** through effects with per-effect saved settings (`-c`)
+- :zzz: **Suspend / resume** around sleep or lock (`--suspend` / `--resume`)
+- :clipboard: Run an **interactive menu** when called with no arguments
 
 State is saved to `~/.config/byd-n16-rgb/state.json`.
 
 ---
 
-## 💻 Supported hardware
+## :computer: Supported hardware
 
 | Property      | Value                      |
 | ------------- | -------------------------- |
@@ -37,9 +37,9 @@ lsusb | grep -i '340e:8002'
 
 ---
 
-## 📦 Installation
+## :package: Installation
 
-> ⚠️ **Disclaimer:** This is an unofficial, reverse-engineered tool. It was developed and tested on an Infinix GT Book; other laptops with the same USB ID may work but are unsupported. Use at your own risk.
+> :warning: **Disclaimer:** This is an unofficial, reverse-engineered tool. It was developed and tested on an Infinix GT Book; other laptops with the same USB ID may work but are unsupported. Use at your own risk.
 
 Requires **Python 3.10+** and **pipx**.
 
@@ -68,9 +68,11 @@ yay -S byd-n16-rgb
 
 ---
 
-## 🔐 USB permissions
+## :closed_lock_with_key: USB permissions
 
 > **AUR install:** the udev rule is installed and reloaded automatically.
+
+By default, Linux restricts direct hardware access to the `root` user for security. This `udev` rule safely grants your standard user account permission to send color commands to the keyboard controller without needing to type `sudo` every time.
 
 Create `/etc/udev/rules.d/99-byd-n16-rgb.rules`:
 
@@ -86,7 +88,7 @@ sudo udevadm control --reload-rules && sudo udevadm trigger
 
 ---
 
-## 🚀 Usage
+## :rocket: Usage
 
 ### Interactive
 
@@ -130,7 +132,7 @@ byd-n16-rgb --help
 
 ---
 
-## 🌈 Effects and zones
+## :rainbow: Effects and zones
 
 ### Global (section 0)
 
@@ -174,7 +176,7 @@ Configure each zone with a separate command. Zones keep their state independentl
 
 ---
 
-## ⌨️ Keybind examples
+## :keyboard: Keybind examples
 
 **Hyprland:**
 
@@ -202,7 +204,7 @@ Optional feedback: `byd-n16-rgb -c && notify-send "Keyboard RGB" "Effect cycled"
 
 ---
 
-## 🔧 Troubleshooting
+## :wrench: Troubleshooting
 
 | Symptom                         | Fix                                             |
 | ------------------------------- | ----------------------------------------------- |
@@ -213,7 +215,7 @@ Optional feedback: `byd-n16-rgb -c && notify-send "Keyboard RGB" "Effect cycled"
 
 ---
 
-## ⚙️ How it works
+## :gear: How it works
 
 The keyboard exposes a composite USB HID device. **Interface 0** is normal typing; **interface 1** is the RGB controller. The tool opens interface 1 and writes a 64-byte report:
 
@@ -223,9 +225,9 @@ The keyboard exposes a composite USB HID device. **Interface 0** is normal typin
 
 Brightness is `percent × 2.55`, capped at 254. Checksum is `sum(bytes[1:63]) & 0xFF`.
 
-Byte 1 is the effect command — see [Effects and zones](#-effects-and-zones) for the full byte tables. Global mode (`-s 0`) sends one packet for the whole keyboard; per-zone mode (`-s 1`–`4`) sends one packet per section, leaving other zones unchanged.
+Byte 1 is the effect command — see [Effects and zones](#rainbow-effects-and-zones) for the full byte tables. Global mode (`-s 0`) sends one packet for the whole keyboard; per-zone mode (`-s 1`–`4`) sends one packet per section, leaving other zones unchanged.
 
-### 💡 Quick example
+### :bulb: Quick example
 
 Command:
 
@@ -262,7 +264,7 @@ After a successful write, settings are saved to `~/.config/byd-n16-rgb/state.jso
 
 ---
 
-## 🤝 Contributing
+## :handshake: Contributing
 
 Reports and packaging contributions welcome. For issues, include:
 
@@ -273,6 +275,6 @@ byd-n16-rgb always_on 255 0 0 100
 
 ---
 
-## 📄 License
+## :page_with_curl: License
 
 See [LICENSE](LICENSE).
