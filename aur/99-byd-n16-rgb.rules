@@ -1,0 +1,2 @@
+# BYD N16 keyboard RGB controller
+KERNEL=="hidraw*", ATTRS{idVendor}=="340e", ATTRS{idProduct}=="8002", MODE="0666"
