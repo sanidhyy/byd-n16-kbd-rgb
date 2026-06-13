@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "byd-n16-rgb"
+version = "0.1.0"
+description = "Linux control for BYD N16 keyboard RGB (USB 340e:8002)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["hidapi>=0.14.0"]
+
+[project.scripts]
+byd-n16-rgb = "byd_n16_rgb:main"
+
+[tool.setuptools]
+py-modules = ["byd_n16_rgb"]
