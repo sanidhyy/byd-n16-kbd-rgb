@@ -46,7 +46,7 @@ Requires **Python 3.10+** and **pipx**.
 ```bash
 git clone https://github.com/sanidhyy/byd-n16-kbd-rgb.git
 cd byd-n16-kbd-rgb
-pipx install .
+pipx install . --system-site-packages
 ```
 
 Then run `byd-n16-rgb --help` to verify.
