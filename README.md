@@ -63,11 +63,14 @@ Install from the AUR:
 
 ```bash
 yay -S byd-n16-rgb
+# or: paru -S byd-n16-rgb
 ```
 
 ---
 
 ## 🔐 USB permissions
+
+> **AUR install:** the udev rule is installed and reloaded automatically.
 
 Create `/etc/udev/rules.d/99-byd-n16-rgb.rules`:
 

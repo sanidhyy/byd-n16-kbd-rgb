@@ -13,11 +13,10 @@ makedepends=(
   'python-setuptools'
   'python-wheel'
 )
-optdepends=()
 options=('!strip')
-source=("$pkgname-$pkgver.tar.gz::https://github.com/sanidhyy/byd-n16-kbd-rgb/archive/refs/tags/v$pkgver.tar.gz"
-        "99-byd-n16-rgb.rules")
-sha256sums=('SKIP' 'SKIP')
+install=byd-n16-rgb.install
+source=("$pkgname-$pkgver.tar.gz::https://github.com/sanidhyy/byd-n16-kbd-rgb/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('')
 
 build() {
   cd "$pkgname-$pkgver"
@@ -27,5 +26,6 @@ build() {
 package() {
   cd "$pkgname-$pkgver"
   python -m installer --destdir="$pkgdir" dist/*.whl
-  install -Dm644 "$srcdir/99-byd-n16-rgb.rules" "$pkgdir/usr/lib/udev/rules.d/99-byd-n16-rgb.rules"
+  install -Dm644 aur/99-byd-n16-rgb.rules "$pkgdir/usr/lib/udev/rules.d/99-byd-n16-rgb.rules"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
