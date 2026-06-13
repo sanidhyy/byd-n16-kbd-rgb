@@ -4,8 +4,6 @@ Unofficial Linux CLI for the **BYD N16** internal keyboard RGB controller (`USB 
 
 Controls colors, brightness, and lighting effects on laptops that use this module. Tested on the Infinix GT Book; other machines with the same USB ID may work.
 
----
-
 ## :sparkles: What it does
 
 `byd-n16-rgb` sends lighting commands directly to the keyboard's RGB HID interface. Fn+F3 still handles basic firmware backlight separately — this tool is for full RGB control.
@@ -20,8 +18,6 @@ Controls colors, brightness, and lighting effects on laptops that use this modul
 
 State is saved to `~/.config/byd-n16-rgb/state.json`.
 
----
-
 ## :computer: Supported hardware
 
 | Property      | Value                      |
@@ -34,8 +30,6 @@ State is saved to `~/.config/byd-n16-rgb/state.json`.
 ```bash
 lsusb | grep -i '340e:8002'
 ```
-
----
 
 ## :package: Installation
 
@@ -66,8 +60,6 @@ yay -S byd-n16-rgb
 # or: paru -S byd-n16-rgb
 ```
 
----
-
 ## :closed_lock_with_key: USB permissions
 
 > **AUR install:** the udev rule is installed and reloaded automatically.
@@ -85,8 +77,6 @@ Reload udev rules to apply immediately:
 ```bash
 sudo udevadm control --reload-rules && sudo udevadm trigger
 ```
-
----
 
 ## :rocket: Usage
 
@@ -130,8 +120,6 @@ byd-n16-rgb --resume
 byd-n16-rgb --help
 ```
 
----
-
 ## :rainbow: Effects and zones
 
 ### Global (section 0)
@@ -174,8 +162,6 @@ byd-n16-rgb --help
 
 Configure each zone with a separate command. Zones keep their state independently on the controller.
 
----
-
 ## :keyboard: Keybind examples
 
 **Hyprland:**
@@ -202,8 +188,6 @@ swayidle -w timeout 300 'byd-n16-rgb --suspend' resume 'byd-n16-rgb --resume'
 
 Optional feedback: `byd-n16-rgb -c && notify-send "Keyboard RGB" "Effect cycled"`
 
----
-
 ## :wrench: Troubleshooting
 
 | Symptom                         | Fix                                             |
@@ -212,8 +196,6 @@ Optional feedback: `byd-n16-rgb -c && notify-send "Keyboard RGB" "Effect cycled"
 | Device not found                | Check `lsusb` for `340e:8002`                   |
 | `wave` fails on a section       | Use `-s 0` — wave is global only                |
 | Colors ignored on rainbow/clock | Expected — hardware ignores RGB for those modes |
-
----
 
 ## :gear: How it works
 
@@ -262,18 +244,14 @@ Only the center third of the main keyboard lights up red — sections 1, 3, and 
 
 After a successful write, settings are saved to `~/.config/byd-n16-rgb/state.json` for toggle, cycle, and quick apply.
 
----
-
 ## :handshake: Contributing
 
-Reports and packaging contributions welcome. For issues, include:
+Pull requests and bug reports are welcome. If you encounter an issue, please provide the following information to help diagnose the problem:
 
 ```bash
 lsusb -v -d 340e:8002 2>/dev/null | head -80
 byd-n16-rgb always_on 255 0 0 100
 ```
-
----
 
 ## :page_with_curl: License
 
