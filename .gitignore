@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Arch / makepkg (aur/)
+aur/src/
+aur/pkg/
+aur/*.pkg.tar.zst
+aur/*.tar.gz

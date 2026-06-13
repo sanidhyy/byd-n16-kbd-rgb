@@ -15,16 +15,17 @@ makedepends=(
 )
 options=('!strip')
 install=byd-n16-rgb.install
-source=("$pkgname-$pkgver.tar.gz::https://github.com/sanidhyy/byd-n16-kbd-rgb/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=()
+_github_repo='byd-n16-kbd-rgb'
+source=("$_github_repo-$pkgver.tar.gz::https://github.com/sanidhyy/byd-n16-kbd-rgb/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('47f395de2ea00df07fc2f36aa9353c9d629cc49fd1f1b6782a9ea1ed6e0193d4')
 
 build() {
-  cd "$pkgname-$pkgver"
+  cd "$_github_repo-$pkgver"
   python -m build --wheel --no-isolation
 }
 
 package() {
-  cd "$pkgname-$pkgver"
+  cd "$_github_repo-$pkgver"
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 aur/99-byd-n16-rgb.rules "$pkgdir/usr/lib/udev/rules.d/99-byd-n16-rgb.rules"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
