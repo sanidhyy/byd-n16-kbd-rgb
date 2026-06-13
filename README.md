@@ -220,7 +220,7 @@ The keyboard exposes a composite USB HID device. **Interface 0** is normal typin
 
 Brightness is `percent × 2.55`, capped at 254. Checksum is `sum(bytes[1:63]) & 0xFF`.
 
-Byte 1 is the effect command — see [Effects and zones](#effects-and-zones) for the full byte tables. Global mode (`-s 0`) sends one packet for the whole keyboard; per-zone mode (`-s 1`–`4`) sends one packet per section, leaving other zones unchanged.
+Byte 1 is the effect command — see [Effects and zones](#-effects-and-zones) for the full byte tables. Global mode (`-s 0`) sends one packet for the whole keyboard; per-zone mode (`-s 1`–`4`) sends one packet per section, leaving other zones unchanged.
 
 ### 💡 Quick example
 
