@@ -1,0 +1,19 @@
+pkgbase = byd-n16-rgb
+	pkgdesc = Unofficial Linux CLI for BYD N16 keyboard RGB (USB 340e:8002)
+	pkgver = 0.1.0
+	pkgrel = 1
+	url = https://github.com/sanidhyy/byd-n16-kbd-rgb
+	install = byd-n16-rgb.install
+	arch = any
+	license = MIT
+	makedepends = python-build
+	makedepends = python-installer
+	makedepends = python-setuptools
+	makedepends = python-wheel
+	depends = python
+	depends = python-hidapi
+	options = !strip
+	source = byd-n16-kbd-rgb-0.1.0.tar.gz::https://github.com/sanidhyy/byd-n16-kbd-rgb/archive/refs/tags/v0.1.0.tar.gz
+	sha256sums = 47f395de2ea00df07fc2f36aa9353c9d629cc49fd1f1b6782a9ea1ed6e0193d4
+
+pkgname = byd-n16-rgb
