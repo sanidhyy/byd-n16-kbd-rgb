@@ -1,10 +1,11 @@
 # Maintainer: Sanidhya Kumar Verma <sanidhya.verma12345@gmail.com>
 pkgname=byd-n16-rgb
+_github_repo='byd-n16-kbd-rgb'
 pkgver=0.1.0
 pkgrel=1
 pkgdesc='Unofficial Linux CLI for BYD N16 keyboard RGB (USB 340e:8002)'
 arch=('any')
-url='https://github.com/sanidhyy/byd-n16-kbd-rgb'
+url="https://github.com/sanidhyy/$_github_repo"
 license=('MIT')
 depends=('python' 'python-hidapi')
 makedepends=(
@@ -15,8 +16,7 @@ makedepends=(
 )
 options=('!strip')
 install=byd-n16-rgb.install
-_github_repo='byd-n16-kbd-rgb'
-source=("$_github_repo-$pkgver.tar.gz::https://github.com/sanidhyy/byd-n16-kbd-rgb/archive/refs/tags/v$pkgver.tar.gz")
+source=("$_github_repo-$pkgver.tar.gz::https://github.com/sanidhyy/$_github_repo/archive/refs/tags/v$pkgver.tar.gz")
 sha256sums=('47f395de2ea00df07fc2f36aa9353c9d629cc49fd1f1b6782a9ea1ed6e0193d4')
 
 build() {
