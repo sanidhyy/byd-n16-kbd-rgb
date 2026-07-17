@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "byd-n16-rgb"
-version = "0.1.0"
+version = "0.1.2"
 description = "Linux control for BYD N16 keyboard RGB (USB 340e:8002)"
 readme = "README.md"
 requires-python = ">=3.10"
