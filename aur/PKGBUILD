@@ -17,7 +17,7 @@ makedepends=(
 options=('!strip')
 install=byd-n16-rgb.install
 source=("$_github_repo-$pkgver.tar.gz::https://github.com/sanidhyy/$_github_repo/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=()
+sha256sums=('dc84a3b1deba1f2511c855175a7a44e5d023c0f910ebe42a690c3f7c113a3eec')
 
 build() {
   cd "$_github_repo-$pkgver"
