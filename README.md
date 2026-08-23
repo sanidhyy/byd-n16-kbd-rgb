@@ -66,7 +66,7 @@ If you run into issues during installation or setup:
 
 - **GitHub Discussions** — [Open a Q&A discussion](https://github.com/sanidhyy/byd-n16-kbd-rgb/discussions/new?category=q-a) for setup and troubleshooting help.
 - **Email** — [sanidhyyy@gmail.com](mailto:sanidhyyy@gmail.com)
-- **Discord** — `sanidhyy`
+- **Discord** — `@sanidhyy`
 
 ## :closed_lock_with_key: USB permissions
 
