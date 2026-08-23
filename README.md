@@ -60,6 +60,14 @@ yay -S byd-n16-rgb
 # or: paru -S byd-n16-rgb
 ```
 
+### :raising_hand: Need Help?
+
+If you run into issues during installation or setup:
+
+- **GitHub Discussions** — [Open a Q&A discussion](https://github.com/sanidhyy/byd-n16-kbd-rgb/discussions/new?category=q-a) for setup and troubleshooting help.
+- **Email** — [sanidhyyy@gmail.com](mailto:sanidhyyy@gmail.com)
+- **Discord** — `sanidhyy`
+
 ## :closed_lock_with_key: USB permissions
 
 > **AUR install:** the udev rule is installed and reloaded automatically.
